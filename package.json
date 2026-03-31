@@ -1,0 +1,15 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "db:up": "docker compose up -d",
+    "db:push": "npx cross-env DATABASE_URL=postgresql://postgres:postgres@localhost:5432/campus_quest pnpm --filter @workspace/db run push",
+    "dev": "npx cross-env DATABASE_URL=postgresql://postgres:postgres@localhost:5432/campus_quest pnpm -r --parallel --if-present run dev",
+    "build": "pnpm -r --if-present run build"
+  },
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  }
+}
